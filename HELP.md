@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.filipecanatto.jasper-reports-samples' is invalid and this project uses 'com.filipecanatto.jasperreportssamples' instead.
+* The original package name 'com.canattofilipe.jasper-reports-samples' is invalid and this project uses 'com.canattofilipe.jasperreportssamples' instead.
 
 # Getting Started
 

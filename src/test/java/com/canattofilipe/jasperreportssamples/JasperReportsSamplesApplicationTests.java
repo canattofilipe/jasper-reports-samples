@@ -1,4 +1,4 @@
-package com.filipecanatto.jasperreportssamples;
+package com.canattofilipe.jasperreportssamples;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
