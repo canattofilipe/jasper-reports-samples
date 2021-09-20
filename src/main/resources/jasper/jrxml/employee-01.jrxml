@@ -48,7 +48,7 @@
 	<columnHeader>
 		<band height="30" splitType="Stretch">
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="0" width="143" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="806d17ce-3c5d-4983-8870-bfb07e6816da">
+				<reportElement mode="Opaque" x="0" y="0" width="119" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="806d17ce-3c5d-4983-8870-bfb07e6816da">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e90c682-a285-4eb6-912d-b613a1bf3efc"/>
 				</reportElement>
 				<box padding="5"/>
@@ -58,7 +58,7 @@
 				<text><![CDATA[Code]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="143" y="0" width="143" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="9ccf8735-a409-4de2-984e-9ad30018e531">
+				<reportElement mode="Opaque" x="119" y="0" width="167" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="9ccf8735-a409-4de2-984e-9ad30018e531">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4ae053ce-3d8f-4249-bc08-b820b6b9c013"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
@@ -89,7 +89,7 @@
 	<detail>
 		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement style="style_alternate_colors" x="0" y="0" width="143" height="30" uuid="8e47df73-7e25-4825-a93f-a006622acc5a">
+				<reportElement style="style_alternate_colors" x="0" y="0" width="119" height="30" uuid="8e47df73-7e25-4825-a93f-a006622acc5a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e90c682-a285-4eb6-912d-b613a1bf3efc"/>
 				</reportElement>
 				<box padding="5">
@@ -105,7 +105,7 @@
 				<textFieldExpression><![CDATA[$F{id_funcionario}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="style_alternate_colors" x="143" y="0" width="143" height="30" uuid="291d11a1-a064-4cb0-9771-2246bba147e7">
+				<reportElement style="style_alternate_colors" x="119" y="0" width="167" height="30" uuid="291d11a1-a064-4cb0-9771-2246bba147e7">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4ae053ce-3d8f-4249-bc08-b820b6b9c013"/>
 				</reportElement>
 				<box>
