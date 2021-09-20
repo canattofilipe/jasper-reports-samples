@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JasperReportsSamplesApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JasperReportsSamplesApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(JasperReportsSamplesApplication.class, args);
+  }
 }
