@@ -12,7 +12,8 @@
 	<queryString>
 		<![CDATA[select f.id_funcionario, f.nome, f.data_nascimento, f.salario ,
 e.razao_social, e.cnpj, e.telefone, e.email
-from funcionarios f, empresas e]]>
+from funcionarios f, empresas e
+order by f.id_funcionario asc]]>
 	</queryString>
 	<field name="id_funcionario" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.name" value="id_funcionario"/>
@@ -82,20 +83,22 @@ from funcionarios f, empresas e]]>
 				</graphicElement>
 			</rectangle>
 			<textField>
-				<reportElement x="0" y="0" width="143" height="30" uuid="c721d7db-562f-4ac9-95c1-3fa09f55c433"/>
+				<reportElement x="0" y="0" width="129" height="30" uuid="c721d7db-562f-4ac9-95c1-3fa09f55c433"/>
 				<box padding="5"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{razao_social}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="143" y="0" width="143" height="30" uuid="5d8ed5e1-1553-45ae-ae4e-4a12bf77b2f4"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{cnpj}]]></textFieldExpression>
+				<reportElement x="129" y="0" width="156" height="30" uuid="5d8ed5e1-1553-45ae-ae4e-4a12bf77b2f4"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b> CNPJ: </b>"+$F{cnpj}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="286" y="0" width="134" height="30" uuid="4fd8bde3-587b-4847-b9dc-6261b3766f87"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["("+$F{telefone}.substring( 0, 2 )+")"+" "+$F{telefone}.substring( 2, 6 )+" -"+$F{telefone}.substring( 6, 10) ]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="420" y="0" width="151" height="30" uuid="f242e070-0f57-427e-b48e-6cb89df71389"/>
@@ -179,7 +182,7 @@ from funcionarios f, empresas e]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="dd/MM/yyyy">
 				<reportElement style="style_alternate_colors" x="286" y="0" width="143" height="30" uuid="67e5b1bc-ad07-4861-969c-3c499af95b3b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7cf3cc3c-e177-4a25-a70c-b6b3cf60cecf"/>
 				</reportElement>
@@ -195,7 +198,7 @@ from funcionarios f, empresas e]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{data_nascimento}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="R$ #,##0.00;¤-#,##0.00">
 				<reportElement style="style_alternate_colors" x="429" y="0" width="143" height="30" uuid="15e5a9bc-e3e6-4cee-8788-ccf6ab71c8a4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="993b1641-0b41-499b-a6fb-c8daa5311b42"/>
 				</reportElement>
