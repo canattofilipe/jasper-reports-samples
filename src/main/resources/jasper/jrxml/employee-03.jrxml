@@ -261,33 +261,65 @@ order by f.id_funcionario asc]]>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="30" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="60" y="0" width="120" height="30" uuid="8418a2e5-6075-4ba5-865a-ea9f8803feae"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="30" uuid="e581518d-cda4-4a88-a995-2f2ea919ffc7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Created at]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="0" width="100" height="30" uuid="a29a0bb3-9b3b-4876-8474-24222b71bad0"/>
+				<textElement textAlignment="Right">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="470" y="0" width="100" height="30" uuid="9771e09b-6836-4f28-8135-97db6346c691"/>
+				<textElement textAlignment="Left">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
-		<band height="62" splitType="Stretch">
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="572" height="30" backcolor="#E3E3E3" uuid="7465c7f0-ebfa-4b2f-93fb-c99b25ee44c8"/>
+			</rectangle>
 			<staticText>
-				<reportElement x="170" y="20" width="100" height="30" uuid="9c482ca4-f3cb-4610-a87f-0ccae9e36523"/>
+				<reportElement x="170" y="0" width="100" height="30" uuid="9c482ca4-f3cb-4610-a87f-0ccae9e36523"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="11" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="370" y="20" width="100" height="30" uuid="eb5f3787-bc7b-4dba-b15f-615d48017767"/>
+				<reportElement x="370" y="0" width="100" height="30" uuid="eb5f3787-bc7b-4dba-b15f-615d48017767"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="11" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Average:]]></text>
 			</staticText>
 			<textField pattern="¤#,##0.00;¤-#,##0.00">
-				<reportElement x="270" y="20" width="100" height="30" uuid="ae659b56-039e-464f-86c2-6bfb13b48fb0"/>
+				<reportElement x="270" y="0" width="100" height="30" uuid="ae659b56-039e-464f-86c2-6bfb13b48fb0"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{SALARY_TOTAL_SUMMARY}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.00;¤-#,##0.00">
-				<reportElement x="472" y="20" width="100" height="30" uuid="1c5f0994-9b2e-477e-a815-580536b2be94"/>
+				<reportElement x="472" y="0" width="100" height="30" uuid="1c5f0994-9b2e-477e-a815-580536b2be94"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
