@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employee-04" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ad9824ca-67f2-4282-a2c5-d58a3582f98d">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employee-04" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" uuid="ad9824ca-67f2-4282-a2c5-d58a3582f98d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySql Udemy Data Adapter"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="style_alternate_colors" mode="Opaque" backcolor="#FFFFFF">
@@ -77,8 +77,9 @@ order by f.id_funcionario asc]]>
 	</variable>
 	<variable name="HIGHEST_SALARY" class="java.math.BigDecimal" resetType="Page" calculation="Highest">
 		<variableExpression><![CDATA[$F{salario}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(0.00)]]></initialValueExpression>
 	</variable>
-	<variable name="LOWEST_SALARY" class="java.math.BigDecimal" calculation="Lowest">
+	<variable name="LOWEST_SALARY" class="java.math.BigDecimal" resetType="Page" calculation="Lowest">
 		<variableExpression><![CDATA[$F{salario}]]></variableExpression>
 	</variable>
 	<background>
@@ -300,6 +301,7 @@ order by f.id_funcionario asc]]>
 	</pageFooter>
 	<lastPageFooter>
 		<band height="30">
+			<printWhenExpression><![CDATA[$V{HIGHEST_SALARY} != null && $V{LOWEST_SALARY} != null]]></printWhenExpression>
 			<rectangle>
 				<reportElement mode="Opaque" x="0" y="0" width="572" height="30" backcolor="#FFFFCC" uuid="5784f9e8-4d35-4100-b773-6f7bdbb5f242"/>
 			</rectangle>
@@ -324,7 +326,7 @@ order by f.id_funcionario asc]]>
 				</textElement>
 				<text><![CDATA[Lowest Salary:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="460" y="0" width="100" height="30" uuid="01a1a741-e99e-4d26-802b-30443bab2496"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
