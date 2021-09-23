@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="funcionarios-09" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb07679b-f8c7-4511-9978-4559d2276b54">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="funcionarios-09" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb07679b-f8c7-4511-9978-4559d2276b54">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySql Udemy Data Adapter"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="header_style" mode="Opaque" forecolor="#FFFFFF" backcolor="#000000" vTextAlign="Middle" fontSize="12" isBold="true">
@@ -254,7 +254,7 @@ $F{nivel}.equals("SENIOR") ? "SR" : "PL"]]></textFieldExpression>
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField>
 				<reportElement x="300" y="0" width="100" height="30" uuid="f8f003e7-7871-46dd-839b-48e4a53982b7"/>
 				<textElement textAlignment="Right">
@@ -274,4 +274,15 @@ $F{nivel}.equals("SENIOR") ? "SR" : "PL"]]></textFieldExpression>
 	<summary>
 		<band height="42" splitType="Stretch"/>
 	</summary>
+	<noData>
+		<band height="54">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="54" uuid="0b8c8837-bfbf-476f-9ac9-d9df10bbebdd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[None register found, try other paramters combination.]]></text>
+			</staticText>
+		</band>
+	</noData>
 </jasperReport>
