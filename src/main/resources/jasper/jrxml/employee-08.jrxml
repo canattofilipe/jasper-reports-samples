@@ -202,7 +202,7 @@ ORDER BY jaspercurso.funcionarios.nome ]]>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{salario}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement style="body_style" x="238" y="0" width="202" height="30" uuid="8e3edd27-85c9-4779-92e1-2b065df6d2a6">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dcc54a0a-707b-4924-8b34-4d5f615d51f8"/>
 				</reportElement>
@@ -229,8 +229,10 @@ $F{nivel}.equals("JUNIOR") ? "JR" :
 $F{nivel}.equals("SENIOR") ? "SR" : "PL"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="body_style" x="442" y="0" width="97" height="30" uuid="94293d8f-5b60-45c8-8526-86cbc845e6e1">
+				<reportElement style="body_style" x="440" y="0" width="99" height="30" uuid="94293d8f-5b60-45c8-8526-86cbc845e6e1">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0ffddd09-8ef0-44a8-9fce-7b5ba33afa95"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[java.time.Period.between($F{data_nascimento}.toLocalDate(), java.time.LocalDate.now()).getYears()]]></textFieldExpression>
