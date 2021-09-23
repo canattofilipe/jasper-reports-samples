@@ -36,6 +36,9 @@
 	<parameter name="LEVEL_DESC" class="java.lang.String">
 		<parameterDescription><![CDATA[Enter a level]]></parameterDescription>
 	</parameter>
+	<parameter name="STATE" class="java.lang.String">
+		<parameterDescription><![CDATA[Enter a valid state]]></parameterDescription>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT jaspercurso.empresas.razao_social,
 	jaspercurso.empresas.cnpj,
@@ -54,8 +57,12 @@ FROM jaspercurso.empresas,
 	 jaspercurso.funcionarios.id_nivel = jaspercurso.niveis.id_nivel 
 WHERE 
 	 jaspercurso.funcionarios.salario <> 0
-	 AND ( $P{LEVEL_DESC} IS NULL OR jaspercurso.niveis.nivel LIKE  $P{LEVEL_DESC} )
-ORDER BY jaspercurso.funcionarios.nome]]>
+	 AND ( $P{LEVEL_DESC} IS NULL OR 	jaspercurso.niveis.nivel LIKE $P{LEVEL_DESC} )
+	 AND ( $P{STATE}  IS NULL OR 	jaspercurso.enderecos.uf LIKE  $P{STATE} )
+ORDER BY jaspercurso.funcionarios.nome DESC 
+
+
+]]>
 	</queryString>
 	<field name="razao_social" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="razao_social"/>
